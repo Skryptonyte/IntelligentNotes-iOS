@@ -40,7 +40,7 @@
                             <outlet property="delegate" destination="R4u-ao-0D5" id="LY6-dR-vdQ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Notes" id="S1b-XW-prb">
+                    <navigationItem key="navigationItem" title="Notes" leftItemsSupplementBackButton="YES" id="S1b-XW-prb">
                         <barButtonItem key="leftBarButtonItem" image="list.bullet" catalog="system" id="Rpu-JB-quz">
                             <connections>
                                 <action selector="setEditMode:" destination="R4u-ao-0D5" id="HPC-Ld-i50"/>
@@ -68,7 +68,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dE-qz-lPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="-29"/>
+            <point key="canvasLocation" x="2233" y="-29"/>
         </scene>
         <!--Create Note Controller-->
         <scene sceneID="4m9-I3-aJ5">
@@ -138,11 +138,113 @@
                         <segue destination="cMn-xR-2BD" kind="relationship" relationship="viewControllers" id="t8I-0K-ohN"/>
                         <segue destination="aPQ-hM-Xe3" kind="relationship" relationship="viewControllers" id="DLV-S0-MVJ"/>
                         <segue destination="XrL-bb-ggk" kind="relationship" relationship="viewControllers" id="P0B-88-a2n"/>
+                        <segue destination="KHZ-0f-iY7" kind="relationship" relationship="viewControllers" id="6rK-J3-acN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngl-uR-EMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="55.725190839694655" y="-28.169014084507044"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="CMd-UB-6Ib">
+            <objects>
+                <tableViewController id="9M5-xB-2ny" customClass="FolderListTableViewController" customModule="IntelligentNotes_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gsi-yo-i0k">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="folderCell" id="NFx-sG-T9S">
+                                <rect key="frame" x="0.0" y="50" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NFx-sG-T9S" id="bJG-1h-r6P">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9M5-xB-2ny" id="SKq-8z-hX7"/>
+                            <outlet property="delegate" destination="9M5-xB-2ny" id="UNu-0a-FVe"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="Xmw-es-6AD"/>
+                    <navigationItem key="navigationItem" title="Notes" largeTitleDisplayMode="always" id="mZ3-FY-Hes">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="folder.fill.badge.plus" catalog="system" id="I3y-G2-ebS">
+                            <connections>
+                                <action selector="addFolderAction:" destination="9M5-xB-2ny" id="pGc-fc-MDJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="R4u-ao-0D5" kind="show" identifier="folderNavigate" id="Zab-zN-o7B"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6i-NX-zAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552" y="-29"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="dn4-Q4-D1g">
+            <objects>
+                <tableViewController id="KHZ-0f-iY7" customClass="SettingsTableViewController" customModule="IntelligentNotes_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0mA-2j-PoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection footerTitle="Created by Rayhan Faizel and Sagarika Seshagiri" id="90s-mX-Mj4">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SWa-nN-wNb">
+                                        <rect key="frame" x="0.0" y="50" width="428" height="51.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWa-nN-wNb" id="Hob-3C-YMl">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="51.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI Engine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4m-yu-JtJ">
+                                                    <rect key="frame" x="19.999999999999996" y="9.9999999999999982" width="60.666666666666657" height="31.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fWz-so-FH3">
+                                                    <rect key="frame" x="213" y="10" width="205" height="32.333333333333329"/>
+                                                    <segments>
+                                                        <segment title="Native Apple"/>
+                                                        <segment title="Google MLKit"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="setEngine:" destination="KHZ-0f-iY7" eventType="valueChanged" id="hk5-GG-5is"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fWz-so-FH3" secondAttribute="trailing" constant="10" id="6bN-bR-RP6"/>
+                                                <constraint firstAttribute="bottom" secondItem="fWz-so-FH3" secondAttribute="bottom" constant="10" id="807-sa-u5I"/>
+                                                <constraint firstItem="D4m-yu-JtJ" firstAttribute="leading" secondItem="Hob-3C-YMl" secondAttribute="leading" constant="20" id="SKi-XM-5ql"/>
+                                                <constraint firstItem="fWz-so-FH3" firstAttribute="top" secondItem="Hob-3C-YMl" secondAttribute="top" constant="10" id="Yi3-we-fWC"/>
+                                                <constraint firstAttribute="bottom" secondItem="D4m-yu-JtJ" secondAttribute="bottom" constant="10" id="ZkO-nI-MlL"/>
+                                                <constraint firstItem="D4m-yu-JtJ" firstAttribute="top" secondItem="Hob-3C-YMl" secondAttribute="top" constant="10" id="jU4-PY-XE8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="KHZ-0f-iY7" id="ke4-5h-4be"/>
+                            <outlet property="delegate" destination="KHZ-0f-iY7" id="3bt-MH-IqO"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="qNu-HU-nBH"/>
+                    <connections>
+                        <outlet property="engineSelection" destination="fWz-so-FH3" id="2xI-YP-0ee"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8I-Zz-sfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126.6355140186915" y="804.75161987041042"/>
         </scene>
         <!--Notes-->
         <scene sceneID="nZY-y4-7ez">
@@ -161,12 +263,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="R4u-ao-0D5" kind="relationship" relationship="rootViewController" id="A0e-PU-oBF"/>
+                        <segue destination="9M5-xB-2ny" kind="relationship" relationship="rootViewController" id="jUO-yZ-grD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAz-pA-NQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="-29"/>
+            <point key="canvasLocation" x="861" y="-29"/>
         </scene>
         <!--Camera-->
         <scene sceneID="Dmj-kd-DIo">
@@ -323,6 +425,8 @@
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="123"/>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
+        <image name="folder.fill.badge.plus" catalog="system" width="128" height="93"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="mic.circle.fill" catalog="system" width="128" height="123"/>
         <image name="square.and.pencil" catalog="system" width="128" height="121"/>

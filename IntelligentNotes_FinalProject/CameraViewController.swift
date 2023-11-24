@@ -8,6 +8,10 @@
 import UIKit
 import AVFoundation
 import Vision
+
+import MLImage
+import MLKit
+
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     override func viewDidLoad() {
@@ -60,7 +64,15 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             else { return }
         
         let image = UIImage(data: imageData)
-         processText(image!)
+        switch (PreferenceManager.getEngine())
+        {
+            case 0:
+                processText(image!)
+            case 1:
+                processText_MLKit(image!)
+            default:
+                print("Invalid engine value")
+        }
     }
 
     func recognizeTextHandler(request: VNRequest, error: Error?) {
@@ -75,7 +87,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         let combinedString = recognizedStrings.joined(separator:" ")
         print(combinedString)
         DBManager.insertIntoNotes(title: "Live Text", content:
-        combinedString)
+                                    combinedString, folderId: 1)
     }
     func processText(_ image: UIImage){
         // Create a new image-request handler.
@@ -92,6 +104,23 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             try requestHandler.perform([request])
         } catch {
             print("Unable to perform the requests: \(error).")
+        }
+    }
+    func processText_MLKit(_ image: UIImage){
+        let latinOptions = TextRecognizerOptions()
+        let textRecognizer = TextRecognizer.textRecognizer(options:latinOptions)
+        
+        let visionImage = VisionImage(image: image)
+        visionImage.orientation = image.imageOrientation
+        
+        textRecognizer.process(visionImage) { result, error in
+          guard error == nil, let result = result else {
+            // Error handling
+            return
+          }
+            DBManager.insertIntoNotes(title: "Live Text (MLKit)", content:
+                                        result.text, folderId: 1)
+          // Recognized text
         }
     }
     

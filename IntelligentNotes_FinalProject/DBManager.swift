@@ -40,13 +40,14 @@ class DBManager {
         sqlite3_finalize(stmt)
     }
     
-    static func insertIntoNotes(title: String, content: String){
+    static func insertIntoNotes(title: String, content: String, folderId: Int){
         var stmt: OpaquePointer? = nil
-        let query = "INSERT INTO NOTES VALUES(NULL,?,?,1,?)"
+        let query = "INSERT INTO NOTES VALUES(NULL,?,?,?,?)"
         if (sqlite3_prepare_v2(openDatabase(), query, -1, &stmt, nil) == SQLITE_OK){
             sqlite3_bind_text(stmt, 1, (title as NSString).utf8String, -1, nil)
             sqlite3_bind_text(stmt, 2, (content as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(stmt, 3, Int32(Date().timeIntervalSince1970))
+            sqlite3_bind_int(stmt, 3, Int32(folderId))
+            sqlite3_bind_int(stmt, 4, Int32(Date().timeIntervalSince1970))
             if (sqlite3_step(stmt) == SQLITE_DONE){
                 print("Query \(query) was run successfully")
             }
@@ -91,8 +92,8 @@ class DBManager {
         }
         sqlite3_finalize(stmt)
     }
-    static func readNotes() -> [Note] {
-           let queryStatementString = "SELECT * FROM notes;"
+    static func readNotes(folderId: Int) -> [Note] {
+           let queryStatementString = "SELECT * FROM notes  where folderid=\(folderId);"
            var queryStatement: OpaquePointer? = nil
            var notes : [Note] = []
            if sqlite3_prepare_v2(openDatabase(), queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
@@ -109,5 +110,38 @@ class DBManager {
            sqlite3_finalize(queryStatement)
             print(notes)
            return notes
+       }
+    static func insertIntoFolders(folderName: String){
+        var stmt: OpaquePointer? = nil
+        let query = "INSERT INTO folders VALUES(NULL,?)"
+        if (sqlite3_prepare_v2(openDatabase(), query, -1, &stmt, nil) == SQLITE_OK){
+            sqlite3_bind_text(stmt, 1, (folderName as NSString).utf8String, -1, nil)
+
+            if (sqlite3_step(stmt) == SQLITE_DONE){
+                print("Query \(query) was run successfully")
+            }
+            else {
+                print("Query \(query) failed!")
+            }
+        }
+        sqlite3_finalize(stmt)
+    }
+    static func readFolders() -> [Folder] {
+           let queryStatementString = "SELECT * FROM folders"
+           var queryStatement: OpaquePointer? = nil
+           var folders : [Folder] = []
+           if sqlite3_prepare_v2(openDatabase(), queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+               while sqlite3_step(queryStatement) == SQLITE_ROW {
+                   let id = sqlite3_column_int(queryStatement, 0)
+                   let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                   
+                   folders.append(Folder(folderID: Int(id), folderName: name))
+               }
+           } else {
+               print("SELECT statement could not be prepared")
+           }
+           sqlite3_finalize(queryStatement)
+           print(folders)
+           return folders
        }
 }

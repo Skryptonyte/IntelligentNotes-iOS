@@ -14,6 +14,7 @@ class NoteListViewController: UICollectionViewController {
     var notes: [Note] = []
     var currentSelectedIndex = -1
     var currentIndexPath: IndexPath = []
+    var currentFolder: Int!;
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
 
     @IBOutlet weak var deleteButton: UIBarButtonItem!
@@ -41,6 +42,7 @@ class NoteListViewController: UICollectionViewController {
             DBManager.deleteNote(noteId: noteid)
         }
         reloadNoteList()
+        self.setEditMode(self.collectionView!)
     }
     func testFunction(_ sender: UITapGestureRecognizer? = nil){
         print("kek")
@@ -48,7 +50,7 @@ class NoteListViewController: UICollectionViewController {
     func reloadNoteList(){
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
-        self.notes = DBManager.readNotes()
+        self.notes = DBManager.readNotes(folderId: currentFolder)
         let cellRegistration = UICollectionView.CellRegistration {
             (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
             print("Notes: \(self.notes)")

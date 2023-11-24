@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12DC8EBBA76490EDAD23CB1D /* Pods_IntelligentNotes_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDC788176CFF23E2B573260 /* Pods_IntelligentNotes_FinalProject.framework */; };
 		2615DEB92B04BE2E00B98B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2615DEB82B04BE2E00B98B11 /* AppDelegate.swift */; };
 		2615DEBB2B04BE2E00B98B11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2615DEBA2B04BE2E00B98B11 /* SceneDelegate.swift */; };
 		2615DEBD2B04BE2E00B98B11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2615DEBC2B04BE2E00B98B11 /* ViewController.swift */; };
@@ -24,6 +25,12 @@
 		261B027D2B0D02AF004A6775 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B027C2B0D02AF004A6775 /* DBManager.swift */; };
 		26AA46432B0F326F00DAED89 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46422B0F326F00DAED89 /* SpeechRecognizer.swift */; };
 		26AA46452B0F334A00DAED89 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46442B0F334A00DAED89 /* SpeechViewController.swift */; };
+		26AA46472B1012E700DAED89 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46462B1012E700DAED89 /* Folder.swift */; };
+		26AA464B2B10629400DAED89 /* FolderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA464A2B10629400DAED89 /* FolderListTableViewController.swift */; };
+		26AA464F2B107BA100DAED89 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA464E2B107BA100DAED89 /* SettingsTableViewController.swift */; };
+		26AA46512B10F55400DAED89 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46502B10F55400DAED89 /* PreferenceManager.swift */; };
+		7ADF859EEEE76C2815BABD82 /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D1FFD6A0B12A586A670C3C /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectUITests.framework */; };
+		EDC7C508455B072FBD0680DF /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F346578BC47925EA97DC /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DDC788176CFF23E2B573260 /* Pods_IntelligentNotes_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelligentNotes_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2615DEB52B04BE2E00B98B11 /* IntelligentNotes_FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentNotes_FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2615DEB82B04BE2E00B98B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2615DEBA2B04BE2E00B98B11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +73,20 @@
 		261B027C2B0D02AF004A6775 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		26AA46422B0F326F00DAED89 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		26AA46442B0F334A00DAED89 /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		26AA46462B1012E700DAED89 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		26AA464A2B10629400DAED89 /* FolderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListTableViewController.swift; sourceTree = "<group>"; };
+		26AA464E2B107BA100DAED89 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		26AA46502B10F55400DAED89 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		4041F346578BC47925EA97DC /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D1FFD6A0B12A586A670C3C /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		493ECFCDB9BB091104843905 /* Pods-IntelligentNotes_FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProject.release.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject.release.xcconfig"; sourceTree = "<group>"; };
+		4E0E31C226726AFAEE81B55D /* Pods-IntelligentNotes_FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProject.debug.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
+		58AABF84A56BD714C5740F46 /* Pods-IntelligentNotes_FinalProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		94124C89A9FF4F75B314919B /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2C6136FA6673C755B593BCF /* Pods-IntelligentNotes_FinalProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProjectTests.release.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB1DAA90F5B9809FA32388B2 /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C35C9ED42148112EDD2427F8 /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.release.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		F1012F3DC8A37475CEE6376F /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12DC8EBBA76490EDAD23CB1D /* Pods_IntelligentNotes_FinalProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC7C508455B072FBD0680DF /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADF859EEEE76C2815BABD82 /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +124,8 @@
 				2615DECE2B04BE2F00B98B11 /* IntelligentNotes_FinalProjectTests */,
 				2615DED82B04BE2F00B98B11 /* IntelligentNotes_FinalProjectUITests */,
 				2615DEB62B04BE2E00B98B11 /* Products */,
+				65CB0931DB6F992525079A07 /* Pods */,
+				E6EACCFDD3091CDD2B8BCA18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +147,8 @@
 				2615DEBA2B04BE2E00B98B11 /* SceneDelegate.swift */,
 				2615DEBC2B04BE2E00B98B11 /* ViewController.swift */,
 				2615DEBE2B04BE2E00B98B11 /* Main.storyboard */,
+				26AA464E2B107BA100DAED89 /* SettingsTableViewController.swift */,
+				26AA464A2B10629400DAED89 /* FolderListTableViewController.swift */,
 				2615DEF22B0529D200B98B11 /* EditNoteController.swift */,
 				2615DEC12B04BE2F00B98B11 /* Assets.xcassets */,
 				2615DEC32B04BE2F00B98B11 /* LaunchScreen.storyboard */,
@@ -130,6 +159,8 @@
 				261B027C2B0D02AF004A6775 /* DBManager.swift */,
 				26AA46422B0F326F00DAED89 /* SpeechRecognizer.swift */,
 				26AA46442B0F334A00DAED89 /* SpeechViewController.swift */,
+				26AA46462B1012E700DAED89 /* Folder.swift */,
+				26AA46502B10F55400DAED89 /* PreferenceManager.swift */,
 			);
 			path = IntelligentNotes_FinalProject;
 			sourceTree = "<group>";
@@ -151,6 +182,31 @@
 			path = IntelligentNotes_FinalProjectUITests;
 			sourceTree = "<group>";
 		};
+		65CB0931DB6F992525079A07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E0E31C226726AFAEE81B55D /* Pods-IntelligentNotes_FinalProject.debug.xcconfig */,
+				493ECFCDB9BB091104843905 /* Pods-IntelligentNotes_FinalProject.release.xcconfig */,
+				94124C89A9FF4F75B314919B /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.debug.xcconfig */,
+				BB1DAA90F5B9809FA32388B2 /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.release.xcconfig */,
+				58AABF84A56BD714C5740F46 /* Pods-IntelligentNotes_FinalProjectTests.debug.xcconfig */,
+				B2C6136FA6673C755B593BCF /* Pods-IntelligentNotes_FinalProjectTests.release.xcconfig */,
+				F1012F3DC8A37475CEE6376F /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.debug.xcconfig */,
+				C35C9ED42148112EDD2427F8 /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E6EACCFDD3091CDD2B8BCA18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DDC788176CFF23E2B573260 /* Pods_IntelligentNotes_FinalProject.framework */,
+				41D1FFD6A0B12A586A670C3C /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectUITests.framework */,
+				4041F346578BC47925EA97DC /* Pods_IntelligentNotes_FinalProject_IntelligentNotes_FinalProjectTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2615DEDF2B04BE2F00B98B11 /* Build configuration list for PBXNativeTarget "IntelligentNotes_FinalProject" */;
 			buildPhases = (
+				A290B505D750A3EE9EC69052 /* [CP] Check Pods Manifest.lock */,
 				2615DEB12B04BE2E00B98B11 /* Sources */,
 				2615DEB22B04BE2E00B98B11 /* Frameworks */,
 				2615DEB32B04BE2E00B98B11 /* Resources */,
+				AEAF1B9632A51F2637047270 /* [CP] Embed Pods Frameworks */,
+				C3F07C6EFD8FCF1236D628AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,9 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2615DEE22B04BE2F00B98B11 /* Build configuration list for PBXNativeTarget "IntelligentNotes_FinalProjectTests" */;
 			buildPhases = (
+				394CE6F3CE7B2D9C9FA1634E /* [CP] Check Pods Manifest.lock */,
 				2615DEC72B04BE2F00B98B11 /* Sources */,
 				2615DEC82B04BE2F00B98B11 /* Frameworks */,
 				2615DEC92B04BE2F00B98B11 /* Resources */,
+				6CA8441B6BBF8D9CFE43DAAE /* [CP] Embed Pods Frameworks */,
+				408D832D4D895788163C9CB9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,9 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2615DEE52B04BE2F00B98B11 /* Build configuration list for PBXNativeTarget "IntelligentNotes_FinalProjectUITests" */;
 			buildPhases = (
+				46577C8EA84C7BCB787957DA /* [CP] Check Pods Manifest.lock */,
 				2615DED12B04BE2F00B98B11 /* Sources */,
 				2615DED22B04BE2F00B98B11 /* Frameworks */,
 				2615DED32B04BE2F00B98B11 /* Resources */,
+				1AB2E6FC5556227E5D49443C /* [CP] Embed Pods Frameworks */,
+				0F90F043668FBB712814D4FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,6 +342,177 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F90F043668FBB712814D4FB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1AB2E6FC5556227E5D49443C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		394CE6F3CE7B2D9C9FA1634E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		408D832D4D895788163C9CB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46577C8EA84C7BCB787957DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CA8441B6BBF8D9CFE43DAAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests/Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A290B505D750A3EE9EC69052 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntelligentNotes_FinalProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEAF1B9632A51F2637047270 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3F07C6EFD8FCF1236D628AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntelligentNotes_FinalProject/Pods-IntelligentNotes_FinalProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2615DEB12B04BE2E00B98B11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -288,11 +524,15 @@
 				2615DEBB2B04BE2E00B98B11 /* SceneDelegate.swift in Sources */,
 				261B027D2B0D02AF004A6775 /* DBManager.swift in Sources */,
 				26AA46432B0F326F00DAED89 /* SpeechRecognizer.swift in Sources */,
+				26AA464F2B107BA100DAED89 /* SettingsTableViewController.swift in Sources */,
 				2615DEEF2B04F00F00B98B11 /* NoteListViewController.swift in Sources */,
 				2615DEF52B054C9500B98B11 /* CameraViewController.swift in Sources */,
 				2615DEE92B04EBCB00B98B11 /* Note.swift in Sources */,
+				26AA46512B10F55400DAED89 /* PreferenceManager.swift in Sources */,
 				2615DEF12B0511AA00B98B11 /* CreateNoteController.swift in Sources */,
+				26AA464B2B10629400DAED89 /* FolderListTableViewController.swift in Sources */,
 				26AA46452B0F334A00DAED89 /* SpeechViewController.swift in Sources */,
+				26AA46472B1012E700DAED89 /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,12 +709,14 @@
 		};
 		2615DEE02B04BE2F00B98B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E0E31C226726AFAEE81B55D /* Pods-IntelligentNotes_FinalProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZBSVKMCTY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntelligentNotes_FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -488,8 +730,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,12 +744,14 @@
 		};
 		2615DEE12B04BE2F00B98B11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 493ECFCDB9BB091104843905 /* Pods-IntelligentNotes_FinalProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PZBSVKMCTY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IntelligentNotes_FinalProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -517,8 +765,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -527,6 +779,7 @@
 		};
 		2615DEE32B04BE2F00B98B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1012F3DC8A37475CEE6376F /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -546,6 +799,7 @@
 		};
 		2615DEE42B04BE2F00B98B11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C35C9ED42148112EDD2427F8 /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -565,6 +819,7 @@
 		};
 		2615DEE62B04BE2F00B98B11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94124C89A9FF4F75B314919B /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -582,6 +837,7 @@
 		};
 		2615DEE72B04BE2F00B98B11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB1DAA90F5B9809FA32388B2 /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

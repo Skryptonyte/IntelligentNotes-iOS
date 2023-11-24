@@ -27,7 +27,8 @@ class CreateNoteController:
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "unwindToList"){
             let controller = segue.destination as? NoteListViewController
-            DBManager.insertIntoNotes(title: titleField!.text!, content: contentField!.text)
+            let folderId = (controller?.currentFolder!)!
+            DBManager.insertIntoNotes(title: titleField!.text!, content: contentField!.text, folderId: folderId)
             controller?.reloadNoteList()
 
 

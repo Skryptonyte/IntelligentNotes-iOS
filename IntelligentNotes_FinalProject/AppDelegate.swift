@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         DBManager.executeQuery(query: "CREATE TABLE IF NOT EXISTS notes(noteid integer primary key autoincrement, name varchar(40), content varchar(1000), folderid int, modifyTime int)")
-        DBManager.executeQuery(query: "CREATE TABLE IF NOT EXISTS folders(folderid integer primary key autoincrement, folderName varchar(40)")
+        DBManager.executeQuery(query: "CREATE TABLE IF NOT EXISTS folders(folderid integer primary key autoincrement, folderName varchar(40))")
+        DBManager.executeQuery(query: "INSERT INTO folders(folderid,foldername) SELECT 1, 'Main' WHERE NOT EXISTS(SELECT 1 FROM folders WHERE folderid = 1 AND foldername = 'Main');")
+        
         return true
     }
 
