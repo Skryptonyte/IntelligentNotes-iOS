@@ -36,6 +36,7 @@ class SpeechViewController: UIViewController {
             self.recordTimerLabel.text = "Not Recording"
             self.recordTimer = 0
             print(speechRecognizer.transcript)
+            DBManager.insertIntoNotes(title: "Recorded Speech", content: speechRecognizer.transcript, folderId: 1)
         }
     }
     

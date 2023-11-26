@@ -26,18 +26,28 @@ class SettingsTableViewController: UITableViewController {
         PreferenceManager.setEngine(engine: sender.selectedSegmentIndex)
     }
     
+    @IBAction func wipeDataAction(_ sender: Any) {
+        let alert = UIAlertController(title: "Wipe Data", message: "You are about to delete all folders and notes!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        alert.addAction(UIAlertAction(title: "Erase", style: .destructive, handler: {
+            (UIAlertAction) -> Void in
+            DBManager.purgeDB()
+        }))
+        present(alert, animated: true)
+    }
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    @IBAction func cancelAllAlarms(_ sender: Any) {
+        let alert = UIAlertController(title: "Cancel all alarms", message: "You are about to cancel all alarms!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: {
+            (UIAlertAction) -> Void in
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests() }))
+        present(alert, animated: true)
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
-    }
-
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

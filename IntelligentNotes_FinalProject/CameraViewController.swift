@@ -124,4 +124,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.captureSession.stopRunning()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.captureSession.startRunning()
+    }
 }

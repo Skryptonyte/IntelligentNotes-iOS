@@ -50,7 +50,11 @@ class NoteListViewController: UICollectionViewController {
     func reloadNoteList(){
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
-        self.notes = DBManager.readNotes(folderId: currentFolder)
+        self.notes = DBManager.readNotes(folderId: currentFolder).sorted(by: {$0.modifyDate > $1.modifyDate})
+        var totrequests: [UNNotificationRequest] = [];
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
+            totrequests = requests
+        })
         let cellRegistration = UICollectionView.CellRegistration {
             (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
             print("Notes: \(self.notes)")
@@ -58,13 +62,27 @@ class NoteListViewController: UICollectionViewController {
             var contentConfiguration = cell.defaultContentConfiguration()
             contentConfiguration.text = note.title
             contentConfiguration.secondaryText = "Modified at \(note.modifyDate.description)"
-            contentConfiguration.image = UIImage(systemName: "note")
+
+            if (totrequests.contains(where: {$0.identifier == "Note-\(note.id)"})){
+                if let notification = totrequests.first(where: {$0.identifier == "Note-\(note.id)"})
+                {
+                    contentConfiguration.image = UIImage(systemName:"clock")
+                    contentConfiguration.secondaryText! += "\nAlarm rings at \((notification.trigger as? UNCalendarNotificationTrigger)!.nextTriggerDate()!.description)"
+                }
+            }
+            else {
+                contentConfiguration.image = UIImage(systemName: "note")
+            }
+            
             cell.contentConfiguration = contentConfiguration
             cell.accessories = [.multiselect()]
             //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
 
         }
+                                                                            
 
+        
+        
 
         dataSource = DataSource(collectionView: collectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in

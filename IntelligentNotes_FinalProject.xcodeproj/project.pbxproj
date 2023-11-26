@@ -23,6 +23,8 @@
 		2615DEF32B0529D200B98B11 /* EditNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2615DEF22B0529D200B98B11 /* EditNoteController.swift */; };
 		2615DEF52B054C9500B98B11 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2615DEF42B054C9500B98B11 /* CameraViewController.swift */; };
 		261B027D2B0D02AF004A6775 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B027C2B0D02AF004A6775 /* DBManager.swift */; };
+		269A2BC12B131F1C00ABC3CA /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A2BC02B131F1B00ABC3CA /* AlarmViewController.swift */; };
+		269A2BC32B13589700ABC3CA /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A2BC22B13589700ABC3CA /* TranslateViewController.swift */; };
 		26AA46432B0F326F00DAED89 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46422B0F326F00DAED89 /* SpeechRecognizer.swift */; };
 		26AA46452B0F334A00DAED89 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46442B0F334A00DAED89 /* SpeechViewController.swift */; };
 		26AA46472B1012E700DAED89 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46462B1012E700DAED89 /* Folder.swift */; };
@@ -71,6 +73,8 @@
 		2615DEF22B0529D200B98B11 /* EditNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteController.swift; sourceTree = "<group>"; };
 		2615DEF42B054C9500B98B11 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		261B027C2B0D02AF004A6775 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		269A2BC02B131F1B00ABC3CA /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		269A2BC22B13589700ABC3CA /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		26AA46422B0F326F00DAED89 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		26AA46442B0F334A00DAED89 /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		26AA46462B1012E700DAED89 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				2615DEBA2B04BE2E00B98B11 /* SceneDelegate.swift */,
 				2615DEBC2B04BE2E00B98B11 /* ViewController.swift */,
 				2615DEBE2B04BE2E00B98B11 /* Main.storyboard */,
+				269A2BC22B13589700ABC3CA /* TranslateViewController.swift */,
 				26AA464E2B107BA100DAED89 /* SettingsTableViewController.swift */,
 				26AA464A2B10629400DAED89 /* FolderListTableViewController.swift */,
 				2615DEF22B0529D200B98B11 /* EditNoteController.swift */,
@@ -161,6 +166,7 @@
 				26AA46442B0F334A00DAED89 /* SpeechViewController.swift */,
 				26AA46462B1012E700DAED89 /* Folder.swift */,
 				26AA46502B10F55400DAED89 /* PreferenceManager.swift */,
+				269A2BC02B131F1B00ABC3CA /* AlarmViewController.swift */,
 			);
 			path = IntelligentNotes_FinalProject;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269A2BC12B131F1C00ABC3CA /* AlarmViewController.swift in Sources */,
 				2615DEBD2B04BE2E00B98B11 /* ViewController.swift in Sources */,
 				2615DEB92B04BE2E00B98B11 /* AppDelegate.swift in Sources */,
 				2615DEF32B0529D200B98B11 /* EditNoteController.swift in Sources */,
@@ -528,6 +535,7 @@
 				2615DEEF2B04F00F00B98B11 /* NoteListViewController.swift in Sources */,
 				2615DEF52B054C9500B98B11 /* CameraViewController.swift in Sources */,
 				2615DEE92B04EBCB00B98B11 /* Note.swift in Sources */,
+				269A2BC32B13589700ABC3CA /* TranslateViewController.swift in Sources */,
 				26AA46512B10F55400DAED89 /* PreferenceManager.swift in Sources */,
 				2615DEF12B0511AA00B98B11 /* CreateNoteController.swift in Sources */,
 				26AA464B2B10629400DAED89 /* FolderListTableViewController.swift in Sources */,
@@ -724,7 +732,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -759,7 +767,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -785,8 +793,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZBSVKMCTY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -805,8 +815,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZBSVKMCTY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -822,8 +834,11 @@
 			baseConfigurationReference = 94124C89A9FF4F75B314919B /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZBSVKMCTY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectUITests";
@@ -840,8 +855,11 @@
 			baseConfigurationReference = BB1DAA90F5B9809FA32388B2 /* Pods-IntelligentNotes_FinalProject-IntelligentNotes_FinalProjectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PZBSVKMCTY;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectUITests";

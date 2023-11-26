@@ -17,6 +17,17 @@ class CreateNoteController:
         let tap = UITapGestureRecognizer(target: self.view,
         action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+        /*
+        let doubleTap1 = UITapGestureRecognizer(target: self.titleField,
+                                                action: #selector(UIView.endEditing))
+        doubleTap1.numberOfTapsRequired = 2
+        self.titleField.addGestureRecognizer(doubleTap1)
+
+        let doubleTap2 = UITapGestureRecognizer(target: self.contentField,
+                                                action: #selector(UIView.endEditing))
+        doubleTap2.numberOfTapsRequired = 2
+        self.contentField.addGestureRecognizer(doubleTap2)
+         */
         // Do any additional setup after loading the view.
     }
     

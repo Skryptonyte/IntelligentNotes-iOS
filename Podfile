@@ -8,6 +8,7 @@ target 'IntelligentNotes_FinalProject' do
   # Pods for IntelligentNotes_FinalProject
   # To recognize Latin script
   pod 'GoogleMLKit/TextRecognition', '3.2.0'
+  pod 'GoogleMLKit/Translate', '3.2.0'
 
   target 'IntelligentNotes_FinalProjectTests' do
     # Pods for testing

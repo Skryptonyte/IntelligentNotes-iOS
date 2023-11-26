@@ -9,10 +9,17 @@ import Foundation
 import SQLite3
 
 class DBManager {
+    static var dbPath: String {
+        if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+            print("In testing mode!")
+             return "test.db"
+        }
+
+        return "intelligent_notes_v2.db"
+    }
 
     static func openDatabase() -> OpaquePointer?
       {
-          let dbPath = "intelligent_notes_v2.db"
           let filePath = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
               .appendingPathComponent(dbPath)
           var db: OpaquePointer? = nil
@@ -144,4 +151,37 @@ class DBManager {
            print(folders)
            return folders
        }
+    static func deleteFolder(folderId: Int){
+        var stmt: OpaquePointer? = nil
+        let query = "DELETE FROM NOTES WHERE FOLDERID=?"
+        if (sqlite3_prepare_v2(openDatabase(), query, -1, &stmt, nil) == SQLITE_OK){
+            sqlite3_bind_int(stmt, 1, Int32(folderId))
+
+            if (sqlite3_step(stmt) == SQLITE_DONE){
+                print("Query \(query) was run successfully")
+            }
+            else {
+                print("Query \(query) failed!")
+            }
+        }
+        sqlite3_finalize(stmt)
+        var stmt2: OpaquePointer? = nil
+
+        let query2 = "DELETE FROM FOLDERS WHERE FOLDERID=?"
+        if (sqlite3_prepare_v2(openDatabase(), query2, -1, &stmt2, nil) == SQLITE_OK){
+            sqlite3_bind_int(stmt2, 1, Int32(folderId))
+
+            if (sqlite3_step(stmt2) == SQLITE_DONE){
+                print("Query \(query2) was run successfully")
+            }
+            else {
+                print("Query \(query2) failed!")
+            }
+        }
+        sqlite3_finalize(stmt2)
+    }
+    static func purgeDB(){
+        DBManager.executeQuery(query: "DELETE FROM notes")
+        DBManager.executeQuery(query: "DELETE FROM folders where foldername != 'Main'")
+    }
 }

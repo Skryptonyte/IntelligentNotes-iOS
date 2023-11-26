@@ -16,9 +16,14 @@ class FolderListTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.folders = DBManager.readFolders()
+        self.tableView.reloadData()
+    }
     @IBAction func addFolderAction(_ sender: Any) {
         let alert = UIAlertController(title: "New Folder", message: "", preferredStyle: .alert)
         var tf: UITextField?;
@@ -70,25 +75,37 @@ class FolderListTableViewController: UITableViewController {
             vc.currentFolder = folders[index!].folderID
         }
     }
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
+        if (self.folders[indexPath.row].folderName == "Main"){
+            return false
+        }
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let alert = UIAlertController(title: "Warning", message: "You are about to delete this folder and all the notes inside", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: {
+                (UIAlertAction) -> Void in
+                DBManager.deleteFolder(folderId: self.folders[indexPath.row].folderID)
+                self.folders = DBManager.readFolders()
+                self.tableView.reloadData()
+            }))
+            
+            present(alert, animated: true)
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
