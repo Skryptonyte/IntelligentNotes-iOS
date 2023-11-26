@@ -25,6 +25,7 @@
 		261B027D2B0D02AF004A6775 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B027C2B0D02AF004A6775 /* DBManager.swift */; };
 		269A2BC12B131F1C00ABC3CA /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A2BC02B131F1B00ABC3CA /* AlarmViewController.swift */; };
 		269A2BC32B13589700ABC3CA /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A2BC22B13589700ABC3CA /* TranslateViewController.swift */; };
+		269A2BC52B13C83000ABC3CA /* FolderSelectSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269A2BC42B13C83000ABC3CA /* FolderSelectSaveViewController.swift */; };
 		26AA46432B0F326F00DAED89 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46422B0F326F00DAED89 /* SpeechRecognizer.swift */; };
 		26AA46452B0F334A00DAED89 /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46442B0F334A00DAED89 /* SpeechViewController.swift */; };
 		26AA46472B1012E700DAED89 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA46462B1012E700DAED89 /* Folder.swift */; };
@@ -75,6 +76,7 @@
 		261B027C2B0D02AF004A6775 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		269A2BC02B131F1B00ABC3CA /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		269A2BC22B13589700ABC3CA /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		269A2BC42B13C83000ABC3CA /* FolderSelectSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSelectSaveViewController.swift; sourceTree = "<group>"; };
 		26AA46422B0F326F00DAED89 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		26AA46442B0F334A00DAED89 /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
 		26AA46462B1012E700DAED89 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				2615DEBA2B04BE2E00B98B11 /* SceneDelegate.swift */,
 				2615DEBC2B04BE2E00B98B11 /* ViewController.swift */,
 				2615DEBE2B04BE2E00B98B11 /* Main.storyboard */,
+				269A2BC42B13C83000ABC3CA /* FolderSelectSaveViewController.swift */,
 				269A2BC22B13589700ABC3CA /* TranslateViewController.swift */,
 				26AA464E2B107BA100DAED89 /* SettingsTableViewController.swift */,
 				26AA464A2B10629400DAED89 /* FolderListTableViewController.swift */,
@@ -539,6 +542,7 @@
 				26AA46512B10F55400DAED89 /* PreferenceManager.swift in Sources */,
 				2615DEF12B0511AA00B98B11 /* CreateNoteController.swift in Sources */,
 				26AA464B2B10629400DAED89 /* FolderListTableViewController.swift in Sources */,
+				269A2BC52B13C83000ABC3CA /* FolderSelectSaveViewController.swift in Sources */,
 				26AA46452B0F334A00DAED89 /* SpeechViewController.swift in Sources */,
 				26AA46472B1012E700DAED89 /* Folder.swift in Sources */,
 			);
@@ -796,7 +800,7 @@
 				DEVELOPMENT_TEAM = PZBSVKMCTY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -818,7 +822,7 @@
 				DEVELOPMENT_TEAM = PZBSVKMCTY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -840,6 +844,7 @@
 				DEVELOPMENT_TEAM = PZBSVKMCTY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -861,6 +866,7 @@
 				DEVELOPMENT_TEAM = PZBSVKMCTY;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skrypton.IntelligentNotes-FinalProjectUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -17,6 +17,7 @@ class FolderListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.tableView.accessibilityIdentifier = "folderList"
         
     }
 
@@ -58,6 +59,7 @@ class FolderListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath)
         cell.textLabel?.text = folders[indexPath.row].folderName
         cell.imageView?.image = UIImage(systemName: "folder")
+        cell.accessibilityIdentifier = folders[indexPath.row].folderName
         // Configure the cell...
 
         return cell

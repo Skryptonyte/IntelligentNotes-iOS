@@ -36,13 +36,20 @@ class SpeechViewController: UIViewController {
             self.recordTimerLabel.text = "Not Recording"
             self.recordTimer = 0
             print(speechRecognizer.transcript)
-            DBManager.insertIntoNotes(title: "Recorded Speech", content: speechRecognizer.transcript, folderId: 1)
+            performSegue(withIdentifier: "folderSave", sender: self)
         }
     }
     
     @objc func updateTimer(){
         self.recordTimer += 1
         self.recordTimerLabel.text = String(format: "%02d:%02d", self.recordTimer/60, self.recordTimer%60)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "folderSave"){
+            let vc = segue.destination as! FolderSelectSaveViewController
+            vc.title_ = "Recorded Speech"
+            vc.content = speechRecognizer.transcript
+        }
     }
     /*
     // MARK: - Navigation

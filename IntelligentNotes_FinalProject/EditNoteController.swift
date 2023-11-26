@@ -31,7 +31,10 @@ class EditNoteController:
         // Do any additional setup after loading the view.
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDismiss), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
     @IBOutlet weak var titleField: UITextField!
     
     @IBOutlet weak var contentField: UITextView!
@@ -58,6 +61,16 @@ class EditNoteController:
     @IBAction func unwindToEdit(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
+    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight = keyboardSize.height
+            self.contentField.contentInset.bottom = keyboardHeight
+        }
+    }
+    @objc func keyboardWillDismiss(notification: NSNotification) {
+            self.contentField.contentInset.bottom = 0
+        
     }
     /*
     // MARK: - Navigation

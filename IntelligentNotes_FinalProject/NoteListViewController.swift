@@ -17,6 +17,7 @@ class NoteListViewController: UICollectionViewController {
     var currentFolder: Int!;
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
 
+    @IBOutlet weak var createButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class NoteListViewController: UICollectionViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.collectionView.accessibilityIdentifier = "noteCollection"
+        self.createButton.accessibilityIdentifier = "createNote"
         reloadNoteList()
     }
 
@@ -55,19 +58,22 @@ class NoteListViewController: UICollectionViewController {
         UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
             totrequests = requests
         })
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         let cellRegistration = UICollectionView.CellRegistration {
             (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
             print("Notes: \(self.notes)")
             let note = self.notes[indexPath.item]
             var contentConfiguration = cell.defaultContentConfiguration()
             contentConfiguration.text = note.title
-            contentConfiguration.secondaryText = "Modified at \(note.modifyDate.description)"
+            contentConfiguration.secondaryText = "Modified at \(dateFormatter.string(from:note.modifyDate))"
 
             if (totrequests.contains(where: {$0.identifier == "Note-\(note.id)"})){
                 if let notification = totrequests.first(where: {$0.identifier == "Note-\(note.id)"})
                 {
                     contentConfiguration.image = UIImage(systemName:"clock")
-                    contentConfiguration.secondaryText! += "\nAlarm rings at \((notification.trigger as? UNCalendarNotificationTrigger)!.nextTriggerDate()!.description)"
+                    contentConfiguration.secondaryText! += "\nAlarm rings at \( dateFormatter.string(from: (notification.trigger as? UNCalendarNotificationTrigger)!.nextTriggerDate()!))"
                 }
             }
             else {

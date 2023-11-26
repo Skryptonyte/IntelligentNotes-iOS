@@ -51,7 +51,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var stillImageOutput: AVCapturePhotoOutput!
-
+    var liveText: String = ""
     @IBAction func takePhotAction(_ sender: Any) {
         print("Taking photo!")
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
@@ -73,6 +73,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             default:
                 print("Invalid engine value")
         }
+    
     }
 
     func recognizeTextHandler(request: VNRequest, error: Error?) {
@@ -86,8 +87,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
         let combinedString = recognizedStrings.joined(separator:" ")
         print(combinedString)
-        DBManager.insertIntoNotes(title: "Live Text", content:
-                                    combinedString, folderId: 1)
+        self.liveText = combinedString
+        self.performSegue(withIdentifier: "folderSave", sender: self)
     }
     func processText(_ image: UIImage){
         // Create a new image-request handler.
@@ -121,9 +122,17 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             DBManager.insertIntoNotes(title: "Live Text (MLKit)", content:
                                         result.text, folderId: 1)
           // Recognized text
+            self.liveText = result.text
+            self.performSegue(withIdentifier: "folderSave", sender: self)
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "folderSave"){
+            let vc = segue.destination as! FolderSelectSaveViewController
+            vc.title_ = "Live Text"
+            vc.content = self.liveText
+        }
+    }
     override func viewDidDisappear(_ animated: Bool) {
         self.captureSession.stopRunning()
     }

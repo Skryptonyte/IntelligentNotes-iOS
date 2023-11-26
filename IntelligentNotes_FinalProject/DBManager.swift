@@ -14,7 +14,7 @@ class DBManager {
             print("In testing mode!")
              return "test.db"
         }
-
+        //return "test.db"
         return "intelligent_notes_v2.db"
     }
 

@@ -62,6 +62,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="createButton" destination="Kk5-Nk-BqQ" id="rcn-NP-qZG"/>
                         <outlet property="deleteButton" destination="JgU-PZ-pfv" id="Ffy-Ap-SJ7"/>
                         <segue destination="7iT-zn-9Wr" kind="show" identifier="editNoteSegue" id="maI-Qa-Tus"/>
                     </connections>
@@ -113,9 +114,18 @@
                             <constraint firstItem="wco-5c-TJE" firstAttribute="leading" secondItem="7gY-xl-hP2" secondAttribute="leading" constant="10" id="qZf-wR-L8h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="r5k-K8-Lqt"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="r5k-K8-Lqt">
+                        <barButtonItem key="rightBarButtonItem" id="hLj-q1-oMV">
+                            <imageReference key="image" image="keyboard" catalog="system" symbolScale="large"/>
+                            <connections>
+                                <action selector="dismissAction:" destination="3uj-AT-8fl" id="7Tm-jD-AkH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentField" destination="y9J-I8-KcT" id="eKP-Qe-Peg"/>
+                        <outlet property="dismissKBButton" destination="hLj-q1-oMV" id="Zwu-Rt-tgf"/>
+                        <outlet property="saveButton" destination="bD4-gX-hmx" id="FeI-Hu-u8w"/>
                         <outlet property="titleField" destination="MWC-8H-yqm" id="Wng-d5-JlN"/>
                     </connections>
                 </viewController>
@@ -395,10 +405,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" catalog="system" id="QMI-Jv-Aac"/>
+                    <connections>
+                        <segue destination="bcA-Rs-ic1" kind="show" identifier="folderSave" id="ejo-rK-6Jp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqZ-fM-Lj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="805"/>
+            <point key="canvasLocation" x="1105" y="805"/>
         </scene>
         <!--Speech-->
         <scene sceneID="IAO-GH-feV">
@@ -453,11 +466,59 @@
                     <connections>
                         <outlet property="recordTimerLabel" destination="7YL-wt-49D" id="Zv6-az-Hlv"/>
                         <outlet property="transcriptLabel" destination="bpi-R6-032" id="llt-ex-yyJ"/>
+                        <segue destination="bcA-Rs-ic1" kind="show" identifier="folderSave" id="N89-9H-M5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ic-uR-bMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="55" y="805"/>
+        </scene>
+        <!--Folder Select Save View Controller-->
+        <scene sceneID="Q0A-dj-nhQ">
+            <objects>
+                <viewController id="bcA-Rs-ic1" customClass="FolderSelectSaveViewController" customModule="IntelligentNotes_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hc-ha-Cj2">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="916"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bkZ-Wx-sT1">
+                                <rect key="frame" x="54" y="314.33333333333337" width="320" height="287.33333333333337"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select folder to save in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqg-JL-3DZ">
+                                        <rect key="frame" x="11" y="0.0" width="298" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgW-je-2bn">
+                                        <rect key="frame" x="0.0" y="37" width="320" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-1h-3vV">
+                                        <rect key="frame" x="122.66666666666666" y="253.00000000000009" width="75" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="submitAction:" destination="bcA-Rs-ic1" eventType="touchUpInside" id="nI6-7i-o5r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kwv-AR-FSE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bkZ-Wx-sT1" firstAttribute="centerY" secondItem="0hc-ha-Cj2" secondAttribute="centerY" id="6eU-ah-F0z"/>
+                            <constraint firstItem="bkZ-Wx-sT1" firstAttribute="centerX" secondItem="0hc-ha-Cj2" secondAttribute="centerX" id="m8w-ZL-1bK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jj1-FT-Yia"/>
+                    <connections>
+                        <outlet property="folderPicker" destination="hgW-je-2bn" id="y0i-yT-SPv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52k-Lb-7br" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="1561"/>
         </scene>
         <!--Edit Note Controller-->
         <scene sceneID="6Yf-e3-J66">
@@ -600,12 +661,16 @@
             <point key="canvasLocation" x="4210" y="710"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="N89-9H-M5a"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="123"/>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
         <image name="folder.fill.badge.plus" catalog="system" width="128" height="93"/>
         <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="keyboard" catalog="system" width="128" height="78"/>
         <image name="lasso" catalog="system" width="128" height="121"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="mic.circle.fill" catalog="system" width="128" height="123"/>
