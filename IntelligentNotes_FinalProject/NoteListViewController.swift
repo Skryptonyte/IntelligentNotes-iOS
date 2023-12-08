@@ -7,7 +7,13 @@
 
 import UIKit
 
-class NoteListViewController: UICollectionViewController {
+class NoteListViewController: UICollectionViewController, UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        self.keyword = searchController.searchBar.text!
+        
+        reloadNoteList()
+    }
+    var keyword = ""
     typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
     var dataSource: DataSource!
 
@@ -16,17 +22,26 @@ class NoteListViewController: UICollectionViewController {
     var currentIndexPath: IndexPath = []
     var currentFolder: Int!;
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
+    let searchController = UISearchController(searchResultsController: nil)
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var createButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+
         reloadNoteList()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.collectionView.accessibilityIdentifier = "noteCollection"
         self.createButton.accessibilityIdentifier = "createNote"
+        
         reloadNoteList()
     }
 
@@ -53,7 +68,12 @@ class NoteListViewController: UICollectionViewController {
     func reloadNoteList(){
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
-        self.notes = DBManager.readNotes(folderId: currentFolder).sorted(by: {$0.modifyDate > $1.modifyDate})
+        if keyword.isEmpty {
+            self.notes = DBManager.readNotes(folderId: currentFolder).sorted(by: {$0.modifyDate > $1.modifyDate})
+        }
+        else {
+            self.notes = DBManager.readNotes(folderId: currentFolder).sorted(by: {$0.modifyDate > $1.modifyDate}).filter{$0.title.lowercased().contains(self.keyword.lowercased())}
+        }
         var totrequests: [UNNotificationRequest] = [];
         UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { requests in
             totrequests = requests
@@ -104,6 +124,7 @@ class NoteListViewController: UICollectionViewController {
         collectionView.dataSource = dataSource
         collectionView.reloadData()
     }
+
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
         listConfiguration.showsSeparators = false

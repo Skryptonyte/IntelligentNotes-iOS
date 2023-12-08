@@ -18,7 +18,7 @@ class TranslateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return Locale.current.localizedString(forLanguageCode: languages[row].rawValue)
     }
-    let languages: [TranslateLanguage] = [.english, .hindi, .kannada, .spanish, .german, .french]
+    let languages: [TranslateLanguage] = [.english, .hindi, .kannada, .spanish, .german, .french, .arabic]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sourcePicker.delegate = self
@@ -53,6 +53,9 @@ class TranslateViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         translator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else {
                 self.dismiss(animated: true)
+                let alert2 = UIAlertController(title: "Error", message: "Failed to load translation model!", preferredStyle: .alert)
+                alert2.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                self.present(alert2, animated: true)
                 print("ERROR:\(error)")
                 return }
             self.dismiss(animated: true)

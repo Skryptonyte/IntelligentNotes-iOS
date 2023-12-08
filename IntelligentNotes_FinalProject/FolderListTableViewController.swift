@@ -18,27 +18,47 @@ class FolderListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         self.tableView.accessibilityIdentifier = "folderList"
+        self.newFolderButton.accessibilityIdentifier = "createFolder"
         
     }
-
+    @IBOutlet weak var newFolderButton: UIBarButtonItem!
+    
     override func viewDidAppear(_ animated: Bool) {
         self.folders = DBManager.readFolders()
         self.tableView.reloadData()
     }
     @IBAction func addFolderAction(_ sender: Any) {
+        let alert2 = UIAlertController(title: "Error", message: "Folder name already exists!", preferredStyle: .alert)
+        alert2.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+  
+        let alert3 = UIAlertController(title: "Error", message: "Folder name is empty!", preferredStyle: .alert)
+        alert3.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         let alert = UIAlertController(title: "New Folder", message: "", preferredStyle: .alert)
         var tf: UITextField?;
         alert.addTextField { (textField : UITextField!) -> Void in
             tf = textField
             tf?.placeholder = "Enter folder name"
-        };        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            tf?.accessibilityIdentifier = "folderName"
+        };
         
-        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: {
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        let clickAction =  UIAlertAction(title: "Add", style: .default, handler: {
             (UIAlertAction) -> Void in
-            DBManager.insertIntoFolders(folderName: tf!.text!)
-            self.folders = DBManager.readFolders()
-            self.tableView.reloadData()
-        }))
+            if (tf!.text!.isEmpty){
+                self.present(alert3, animated: true)
+            }
+            else if (self.folders.contains(where: {$0.folderName == tf!.text!})){
+                self.present(alert2, animated: true)
+            }
+            else{
+                DBManager.insertIntoFolders(folderName: tf!.text!)
+                self.folders = DBManager.readFolders()
+                self.tableView.reloadData()
+            }
+        })
+        alert.addAction(clickAction)
+        clickAction.accessibilityIdentifier = "okAction"
         present(alert, animated: true)
 
     }

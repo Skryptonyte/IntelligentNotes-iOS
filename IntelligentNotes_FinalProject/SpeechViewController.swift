@@ -17,6 +17,7 @@ class SpeechViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var speechButton: UIButton!
     @IBOutlet weak var recordTimerLabel: UILabel!
     @IBOutlet weak var transcriptLabel: UILabel!
     var recordTimer = 0

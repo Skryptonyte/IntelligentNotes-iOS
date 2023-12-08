@@ -43,11 +43,16 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             }
         }
         catch let error  {
+            let alert2 = UIAlertController(title: "Error", message: "Unable to access camera! Please ensure correct permissions", preferredStyle: .alert)
+            alert2.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alert2, animated: true)
+            self.captureButton.isEnabled = false
             print("Error Unable to initialize back camera:  \(error.localizedDescription)")
         }
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var captureButton: UIButton!
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var stillImageOutput: AVCapturePhotoOutput!
@@ -99,7 +104,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         // Create a new request to recognize text.
         let request = VNRecognizeTextRequest(completionHandler: recognizeTextHandler)
 
-        
+        request.recognitionLevel = .accurate
         do {
             // Perform the text-recognition request.
             try requestHandler.perform([request])
@@ -119,8 +124,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             // Error handling
             return
           }
-            DBManager.insertIntoNotes(title: "Live Text (MLKit)", content:
-                                        result.text, folderId: 1)
           // Recognized text
             self.liveText = result.text
             self.performSegue(withIdentifier: "folderSave", sender: self)

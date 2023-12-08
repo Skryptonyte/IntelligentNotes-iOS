@@ -48,7 +48,23 @@ final class IntelligentNotes_FinalProjectUITests: XCTestCase {
         XCTAssert(app.collectionViews["noteCollection"].cells.containing(predicate).count > 0)
         
         app.collectionViews["noteCollection"].cells.containing(predicate).element(boundBy: 0).tap()
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+
+    func testCreateFolder() throws {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
         
+        app.buttons["createFolder"].tap()
+        app.textFields["folderName"].tap()
+        
+        app.typeText("Test Folder")
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", "Add")
+        app.buttons.containing(predicate).element(boundBy: 0).tap()
+        let predicate2 = NSPredicate(format: "label CONTAINS[c] %@", "Test Folder")
+        
+        XCTAssert(app.tables["folderList"].cells.containing(predicate2).count > 0)
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 

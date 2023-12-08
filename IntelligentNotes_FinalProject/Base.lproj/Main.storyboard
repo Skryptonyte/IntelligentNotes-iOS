@@ -69,7 +69,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dE-qz-lPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="-29"/>
+            <point key="canvasLocation" x="2665" y="-47"/>
         </scene>
         <!--Create Note Controller-->
         <scene sceneID="4m9-I3-aJ5">
@@ -86,6 +86,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="408" height="100.66666666666667"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="titleEdit:" destination="3uj-AT-8fl" eventType="editingChanged" id="OAX-WL-jLE"/>
+                                        </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y9J-I8-KcT">
                                         <rect key="frame" x="0.0" y="100.66666666666663" width="408" height="597"/>
@@ -94,7 +97,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-gX-hmx">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-gX-hmx">
                                         <rect key="frame" x="0.0" y="697.66666666666663" width="408" height="34.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save"/>
@@ -132,9 +135,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYp-Kp-0cj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="L6z-6Q-Zyb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3000" y="-29.157667386609074"/>
+            <point key="canvasLocation" x="3390" y="-47"/>
         </scene>
-        <!--Alarm View Controller-->
+        <!--Reminder-->
         <scene sceneID="fGO-b3-9yJ">
             <objects>
                 <viewController id="PFf-zF-Ne4" customClass="AlarmViewController" customModule="IntelligentNotes_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,34 +145,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="4w2-2z-hAk">
-                                <rect key="frame" x="54" y="355" width="320" height="216"/>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-975675600">
-                                    <!--1970-01-31 11:00:00 +0000-->
-                                </date>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WE0-SH-RRI">
+                                <rect key="frame" x="54" y="334" width="320" height="258.33333333333326"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="4w2-2z-hAk">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-975675600">
+                                            <!--1970-01-31 11:00:00 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkX-rz-sAN">
+                                        <rect key="frame" x="83.333333333333357" y="224" width="153.66666666666663" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancel Reminder"/>
+                                        <connections>
+                                            <action selector="cancelReminder:" destination="PFf-zF-Ne4" eventType="touchUpInside" id="bPY-VS-2FZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Kj-NO-sxd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4w2-2z-hAk" firstAttribute="centerX" secondItem="SG2-PD-xlG" secondAttribute="centerX" id="6dc-sk-hcr"/>
-                            <constraint firstItem="4w2-2z-hAk" firstAttribute="centerY" secondItem="SG2-PD-xlG" secondAttribute="centerY" id="uA8-Xb-SDe"/>
+                            <constraint firstItem="WE0-SH-RRI" firstAttribute="centerX" secondItem="SG2-PD-xlG" secondAttribute="centerX" id="cjm-Tr-WXC"/>
+                            <constraint firstItem="WE0-SH-RRI" firstAttribute="centerY" secondItem="SG2-PD-xlG" secondAttribute="centerY" id="pbh-Eh-VX6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wIc-Gn-p8X">
-                        <barButtonItem key="rightBarButtonItem" title="Set Alarm" id="vCG-xQ-8Oz">
+                    <navigationItem key="navigationItem" title="Reminder" id="wIc-Gn-p8X">
+                        <barButtonItem key="rightBarButtonItem" title="Set Reminder" id="vCG-xQ-8Oz">
                             <connections>
                                 <action selector="setAlarmAndClose:" destination="PFf-zF-Ne4" id="3yO-Ca-qCT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelReminderButton" destination="DkX-rz-sAN" id="obE-jD-hxt"/>
                         <outlet property="dateTimePicker" destination="4w2-2z-hAk" id="oX2-4c-0oH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vtA-YL-4vB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4181.7757009345796" y="-4.5356371490280782"/>
+            <point key="canvasLocation" x="4248" y="288"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sWa-QJ-3A0">
@@ -190,7 +207,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngl-uR-EMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55.725190839694655" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="230" y="-47"/>
         </scene>
         <!--Notes-->
         <scene sceneID="CMd-UB-6Ib">
@@ -224,12 +241,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="newFolderButton" destination="I3y-G2-ebS" id="UQP-3d-D8r"/>
                         <segue destination="R4u-ao-0D5" kind="show" identifier="folderNavigate" id="Zab-zN-o7B"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6i-NX-zAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552" y="-29"/>
+            <point key="canvasLocation" x="1900" y="-47"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dn4-Q4-D1g">
@@ -349,7 +367,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8I-Zz-sfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126.6355140186915" y="804.75161987041042"/>
+            <point key="canvasLocation" x="1086" y="805"/>
         </scene>
         <!--Notes-->
         <scene sceneID="nZY-y4-7ez">
@@ -373,7 +391,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAz-pA-NQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="-29"/>
+            <point key="canvasLocation" x="964" y="-47"/>
         </scene>
         <!--Camera-->
         <scene sceneID="Dmj-kd-DIo">
@@ -406,12 +424,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" catalog="system" id="QMI-Jv-Aac"/>
                     <connections>
+                        <outlet property="captureButton" destination="3MF-GP-1dA" id="o1D-yN-v5w"/>
                         <segue destination="bcA-Rs-ic1" kind="show" identifier="folderSave" id="ejo-rK-6Jp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqZ-fM-Lj3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="805"/>
+            <point key="canvasLocation" x="230" y="805"/>
         </scene>
         <!--Speech-->
         <scene sceneID="IAO-GH-feV">
@@ -422,7 +441,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="msR-1Y-M11">
-                                <rect key="frame" x="20" y="330.66666666666669" width="388" height="265.00000000000006"/>
+                                <rect key="frame" x="20" y="355.66666666666669" width="388" height="215.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mq3-ft-0cY">
                                         <rect key="frame" x="109.33333333333336" y="0.0" width="169.66666666666663" height="145.33333333333334"/>
@@ -444,8 +463,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpi-R6-032">
-                                        <rect key="frame" x="169" y="214.99999999999994" width="50" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpi-R6-032">
+                                        <rect key="frame" x="194" y="214.99999999999994" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -465,13 +484,14 @@
                     <tabBarItem key="tabBarItem" title="Speech" image="waveform.path" catalog="system" selectedImage="waveform.path" id="3zG-NW-ccq"/>
                     <connections>
                         <outlet property="recordTimerLabel" destination="7YL-wt-49D" id="Zv6-az-Hlv"/>
+                        <outlet property="speechButton" destination="Mq3-ft-0cY" id="yjb-J0-6ie"/>
                         <outlet property="transcriptLabel" destination="bpi-R6-032" id="llt-ex-yyJ"/>
                         <segue destination="bcA-Rs-ic1" kind="show" identifier="folderSave" id="N89-9H-M5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ic-uR-bMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="805"/>
+            <point key="canvasLocation" x="-558" y="805"/>
         </scene>
         <!--Folder Select Save View Controller-->
         <scene sceneID="Q0A-dj-nhQ">
@@ -494,9 +514,9 @@
                                         <rect key="frame" x="0.0" y="37" width="320" height="216"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-1h-3vV">
-                                        <rect key="frame" x="122.66666666666666" y="253.00000000000009" width="75" height="34.333333333333343"/>
+                                        <rect key="frame" x="129.66666666666666" y="253.00000000000009" width="61" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                         <connections>
                                             <action selector="submitAction:" destination="bcA-Rs-ic1" eventType="touchUpInside" id="nI6-7i-o5r"/>
                                         </connections>
@@ -518,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52k-Lb-7br" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="1561"/>
+            <point key="canvasLocation" x="-154" y="1560"/>
         </scene>
         <!--Edit Note Controller-->
         <scene sceneID="6Yf-e3-J66">
@@ -535,6 +555,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="408" height="100.66666666666667"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onTitleEdit:" destination="7iT-zn-9Wr" eventType="editingChanged" id="JvS-Zh-8NO"/>
+                                        </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J7j-Kq-3Jd">
                                         <rect key="frame" x="0.0" y="100.66666666666663" width="408" height="597"/>
@@ -566,6 +589,11 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="U8C-jX-4XH">
                         <rightBarButtonItems>
+                            <barButtonItem title="Item" image="keyboard" catalog="system" id="qqZ-su-rgz">
+                                <connections>
+                                    <action selector="dismissKeyboardAction:" destination="7iT-zn-9Wr" id="RI6-HF-m7Z"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Item" image="lasso" catalog="system" id="hO4-Ic-3RP">
                                 <connections>
                                     <segue destination="rgL-0x-SBk" kind="show" identifier="translateSegue" id="cw2-du-NLd"/>
@@ -580,6 +608,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentField" destination="J7j-Kq-3Jd" id="MBe-Et-mtq"/>
+                        <outlet property="saveButton" destination="HRh-zQ-e3d" id="iic-Yb-qBT"/>
                         <outlet property="titleField" destination="eaV-GD-ebz" id="vEG-Ry-Qft"/>
                     </connections>
                 </viewController>
@@ -588,7 +617,7 @@
             </objects>
             <point key="canvasLocation" x="3000" y="805"/>
         </scene>
-        <!--Translate View Controller-->
+        <!--Translate Text-->
         <scene sceneID="93n-nC-aDz">
             <objects>
                 <viewController id="rgL-0x-SBk" customClass="TranslateViewController" customModule="IntelligentNotes_FinalProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -648,7 +677,7 @@
                             <constraint firstItem="iLr-Fp-h6G" firstAttribute="centerX" secondItem="ad5-Ch-spG" secondAttribute="centerX" id="feD-a7-Ko8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="y7L-fc-Oa8"/>
+                    <navigationItem key="navigationItem" title="Translate Text" id="y7L-fc-Oa8"/>
                     <connections>
                         <outlet property="destPicker" destination="iBU-BM-qeG" id="O0B-K7-ebn"/>
                         <outlet property="sourcePicker" destination="wxn-b4-hSz" id="859-Pa-rcP"/>
@@ -658,11 +687,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Sw-Ao-Lih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="mXo-yF-7Dr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="710"/>
+            <point key="canvasLocation" x="4248" y="1041"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N89-9H-M5a"/>
+        <segue reference="ejo-rK-6Jp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="93"/>

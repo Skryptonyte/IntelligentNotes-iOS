@@ -42,6 +42,10 @@ class EditNoteController:
     var noteContent: String = ""
     var noteId: Int = -1;
     
+    @IBOutlet weak var saveButton: UIButton!
+    @IBAction func dismissKeyboardAction(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "unwindToList")
         {
@@ -71,6 +75,14 @@ class EditNoteController:
     @objc func keyboardWillDismiss(notification: NSNotification) {
             self.contentField.contentInset.bottom = 0
         
+    }
+    @IBAction func onTitleEdit(_ sender: Any) {
+        if (self.titleField.text!.isEmpty){
+            self.saveButton.isEnabled = false
+        }
+        else {
+            self.saveButton.isEnabled = true
+        }
     }
     /*
     // MARK: - Navigation

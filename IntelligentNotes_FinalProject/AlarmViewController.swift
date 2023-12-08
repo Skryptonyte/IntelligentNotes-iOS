@@ -20,13 +20,24 @@ class AlarmViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var cancelReminderButton: UIButton!
     var note: Note! = nil
 
+    @IBAction func cancelReminder(_ sender: Any) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["Note-\(self.note.id)"])
+    }
     @IBAction func setAlarmAndClose(_ sender: Any) {
+        let alert2 = UIAlertController(title: "Error", message: "Reminder time cannot precent current date and time! Plesae set a time in the future", preferredStyle: .alert)
+        alert2.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+  
+        if (self.dateTimePicker.date < Date()){
+            present(alert2, animated: true)
+            return
+        }
         let content = UNMutableNotificationContent()
         content.title = self.note.title
         content.body = self.note.content
-        
+        content.sound = UNNotificationSound.defaultCritical
         print("adding alarm")
         var dateComponents = DateComponents()
         dateComponents.hour = Calendar.current.component(.hour, from: self.dateTimePicker.date)

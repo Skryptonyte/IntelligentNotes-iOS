@@ -71,6 +71,16 @@ class CreateNoteController:
             self.contentField.contentInset.bottom = 0
         
     }
+    
+    @IBAction func titleEdit(_ sender: Any) {
+        if (self.titleField.text!.isEmpty){
+            self.saveButton.isEnabled = false
+        }
+        else {
+            self.saveButton.isEnabled = true
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

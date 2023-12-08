@@ -32,6 +32,12 @@ actor SpeechRecognizer: ObservableObject {
     @MainActor var transcript: String = "" {
         didSet {
             self.delegate?.transcriptLabel.text = transcript
+            if (!self.recognizer!.isAvailable || transcript.starts(with: "<< ")){
+                self.delegate?.speechButton.isEnabled = false
+            }
+            else {
+                self.delegate?.speechButton.isEnabled = true
+            }
         }
     }
     
